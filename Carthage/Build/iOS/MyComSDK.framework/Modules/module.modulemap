@@ -1,0 +1,11 @@
+framework module MyComSDK {
+  umbrella header "MyComSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module MyComSDK.Swift {
+  header "MyComSDK-Swift.h"
+  requires objc
+}
