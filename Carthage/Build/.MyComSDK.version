@@ -1,0 +1,28 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "0.1.0",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)",
+      "hash" : "6d3f12166afa4b491ab3dc073e6baf29c03b358ea3143efd512fed794b443792",
+      "name" : "MyComSDK",
+      "container" : "MyComSDK.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)",
+      "hash" : "f6d8e796cd5bb94cef66469257e5c2cceb9e2c2eab71fde61975c0ce082fb2f9",
+      "name" : "MyComSDK",
+      "container" : "MyComSDK.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}
