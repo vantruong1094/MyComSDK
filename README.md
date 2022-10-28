@@ -1,6 +1,7 @@
 # hacocms-ios-sdk
 
 [hacoCMS](https://hacocms.com/)のiOS用 API クライアントライブラリです。
+
 **Platform**: iOS 13.0+
 **Minimum Swift Version**: 5.x
 
@@ -26,11 +27,11 @@
 
 ## CocoaPods
 
-Podfileファイルに追加する方法で[CocoaPds](https://cocoapods.org/)経由でhacoCMSiOSSDKをインストールできます。
+Podfileファイルに追加する方法で[CocoaPods](https://cocoapods.org/)経由でhacoCMSiOSSDKをインストールできます。
 その後、:
 
 ```
-pod 'HacocmsiOSSDK'
+pod 'hacoCMSiOSSDK'
 ```
 Terminal内で`pod install`を実行したらいいです。
 
@@ -39,7 +40,7 @@ Terminal内で`pod install`を実行したらいいです。
 Cartfileファイルに追加する方法で[Carthage](https://github.com/Carthage/Carthage)経由でhacoCMSiOSSDKをインストールできす。
 
 ```
-github "hacocms/HacocmsiOSSDK"
+github "hacocms/hacoCMSiOSSDK"
 ```
 
 ## Swift Package Manager
@@ -52,7 +53,7 @@ import PackageDescription
 let package = Package(
     [...]
     dependencies: [
-        .package(url: "https://github.com/hacocms/HacocmsiOSSDK.git", from: "1.0.0"),
+        .package(url: "https://github.com/hacocms/hacoCMSiOSSDK.git", from: "1.0.0"),
     ]
 )
 ```
