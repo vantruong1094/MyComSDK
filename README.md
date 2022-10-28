@@ -2,8 +2,8 @@
 
 [hacoCMS](https://hacocms.com/)のiOS用 API クライアントライブラリです。
 
-**Platform**: iOS 13.0+
-**Minimum Swift Version**: 5.x
+- **Platform**: iOS 13.0+
+- **Minimum Swift Version**: 5.x
 
 
 # Step 1. hacoCMSのAPIスキーマ設定
