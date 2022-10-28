@@ -1,6 +1,9 @@
 # hacocms-ios-sdk
 
-API client library for iOS of [hacoCMS](https://hacocms.com/).
+[hacoCMS](https://hacocms.com/)のiOS用 API クライアントライブラリです。
+**Platform**: iOS 13.0+
+**Minimum Swift Version**: 5.x
+
 
 # Step 1. hacoCMSのAPIスキーマ設定
 お持ちのhacoCMSアカウントの適当なプロジェクト（無ければ作成してください）に、ブログ記事のAPIを以下の設定で作成してください。[APIの作成方法についてはhacoCMSのドキュメント](https://hacocms.com/docs/entry/api-create)をご確認ください。
@@ -17,19 +20,23 @@ API client library for iOS of [hacoCMS](https://hacocms.com/).
 | 2 | テキストフィールド       | 概要             | `description`    |
 | 3 | リッチテキスト          | 本文             | `body`           |
 
-# Step 2. Installation a SDK
+記事APIを作成できたら、適当な記事をいくつか作成してみましょう。[コンテンツの作成方法についてはhacoCMSのドキュメント](https://hacocms.com/docs/entry/contents-create)をご確認ください。
+
+# Step 2. hacoCMS SDKのインストール
 
 ## CocoaPods
 
-Bạn có thể cài đặt HacocmsiOSSDK thông qua [CocoaPds](https://cocoapods.org/) bằng việc thêm nó vào file `Podfile`:
+Podfileファイルに追加する方法で[CocoaPds](https://cocoapods.org/)経由でhacoCMSiOSSDKをインストールできます。
+その後、:
+
 ```
 pod 'HacocmsiOSSDK'
 ```
-Sau đó thực thi terminal `pod install`.
+Terminal内で`pod install`を実行したらいいです。
 
 ## Carthage
 
-Bạn có thể cài đặt HacocmsiOSSDK thông qua [Carthage](https://github.com/Carthage/Carthage) bằng việc thêm nó vào file `Cartfile`:
+Cartfileファイルに追加する方法で[Carthage](https://github.com/Carthage/Carthage)経由でhacoCMSiOSSDKをインストールできす。
 
 ```
 github "hacocms/HacocmsiOSSDK"
@@ -37,7 +44,7 @@ github "hacocms/HacocmsiOSSDK"
 
 ## Swift Package Manager
 
-Bạn có thể cài đặt HacocmsiOSSDK thông qua [Swift Package Manager](https://swift.org/package-manager/) bằng việc thêm nó vào file `Package.swift`:
+Package.swiftファイルに追加する方法で[Swift Package Manager](https://swift.org/package-manager/)経由でhacoCMSiOSSDKをインストールできます。
 
 ```swift
 import PackageDescription
@@ -50,9 +57,9 @@ let package = Package(
 )
 ```
 
-# Step 3. Usage
+# Step 3. コード展開方法
 
-**Tạo đối tượng client**
+**クライアント対象作成**
 ```swift
 let client = HacoCmsClient(
     subDomain: SUB_DOMAIN, // Sub domain in project basic settings
@@ -62,7 +69,7 @@ let client = HacoCmsClient(
 )
 ```
 
-Để maping được kết quả trả về từ API, chúng ta tạo Object được extends từ `Codable`:
+APIから返ってきた結果をmapingするために、 CodableからextendsされたObjectを作ります。:
 
 ```swift
 class HacoContent: Codable {
@@ -77,10 +84,10 @@ class Entry: Codable {
 }
 ```
 
-Thư viện có hỗ trợ 2 cách triển khai code, bạn có thể sử dụng Closures hoặc Combine để xử lý kết quả phía API trả về
+APIから返ってきた結果を処理するために、Closures か Combineを通して処理できます。
 
 
-## Sử dụng Closures
+## Closures使用
 
 ```swift
 
@@ -117,7 +124,7 @@ client.getDetailContent(returnType: Content.self, path: "/posts", contentId: "co
 }
 ```
 
-## Sử dụng Combine
+## Combine使用
 
 ```swift
 
@@ -168,7 +175,7 @@ client.getDetailContent(returnType: Content.self, path: "/posts", contentId: "co
 ```
 
 # Parameters
-Thư viện cũng hỗ trợ bạn định nghĩa các parameter cần chỉ định khi request API
+ライブラリはAPIリクエスト時に指定する必要があるパラメータを定義するのもサポートします。
 
 ```swift
 client.getListContent(returnType: ResponseData.self, path: "/posts", query: QueryBuilder(limit: 3, s: "-updatedAt")) { result in
