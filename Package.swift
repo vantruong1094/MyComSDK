@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "MyComSDK",
+    name: "MyComSDKSwift",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "MyComSDK",
+            name: "MyComSDKSwift",
             targets: ["MyComSDK"]),
     ],
     dependencies: [
